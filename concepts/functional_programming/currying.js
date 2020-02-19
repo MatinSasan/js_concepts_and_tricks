@@ -23,3 +23,11 @@ const multiply = a => b => c => a * b * c;
 // Example
 const multiplyBy3 = multiply(3);
 multiplyBy3(2)(1); // b = 2; c = 1;
+
+// General Curry Function: takes any function and returns a curred version of it
+
+function curry(fn, ...args) {
+  return (..._arg) => {
+    return fn(...args, ..._arg);
+  };
+}
